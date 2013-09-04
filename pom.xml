@@ -58,10 +58,23 @@
 
     </dependencies>
 
-
-
     <build>
         <finalName>SparkWebDemo</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <mainClass>fr.xebia.extremperf.MyServer</mainClass>
+                    <!--<arguments>-->
+                        <!--<argument>argument1</argument>-->
+                    <!--</arguments>-->
+                </configuration>
+            </plugin>
+        </plugins>
+
     </build>
 
 </project>
