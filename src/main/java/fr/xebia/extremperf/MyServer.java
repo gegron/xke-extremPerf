@@ -31,7 +31,6 @@ public class MyServer {
 
                 Pricer pricer = new Pricer(s, k, u, r, expiration);
 
-//                return String.format("Recu: S=%s, K=%s, R=%s, u=%s, expiration=%s", s, k, r, u, expiration);
                 return pricer.fairValue();
             }
         });
