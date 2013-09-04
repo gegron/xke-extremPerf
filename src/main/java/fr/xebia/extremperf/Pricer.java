@@ -22,7 +22,6 @@ public class Pricer {
         this.q = (R - d) / (u - d);
     }
 
-
     private Double round(Double aDouble) {
         return Math.rint(aDouble * 100) / 100;
     }
