@@ -23,13 +23,16 @@ public class MyServer {
             public Object handle(Request request, Response response) {
                 QueryParamsMap map = request.queryMap();
 
-                String s = map.get("S").value();
-                String k = map.get("K").value();
-                String r = map.get("R").value();
-                String u = map.get("u").value();
-                String expiration = map.get("expiration").value();
+                Double s = Double.valueOf(map.get("S").value());
+                Double k = Double.valueOf(map.get("K").value());
+                Double r = Double.valueOf(map.get("R").value());
+                Double u = Double.valueOf(map.get("u").value());
+                Integer expiration = Integer.valueOf(map.get("expiration").value());
 
-                return String.format("Recu: S=%s, K=%s, R=%s, u=%s, expiration=%s", s, k, r, u, expiration);
+                Pricer pricer = new Pricer(s, k, u, r, expiration);
+
+//                return String.format("Recu: S=%s, K=%s, R=%s, u=%s, expiration=%s", s, k, r, u, expiration);
+                return pricer.fairValue();
             }
         });
 
